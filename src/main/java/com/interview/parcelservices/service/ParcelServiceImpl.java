@@ -21,6 +21,7 @@ import java.util.UUID;
 public class ParcelServiceImpl implements ParcelService {
     private final ParcelRepository parcelRepository;
 
+    @Override
     public List<ParcelDto> findByGuestId(UUID guestId) {
         return parcelRepository.findByGuestId(guestId).stream()
                 .map(ParcelMapper::toDto)
